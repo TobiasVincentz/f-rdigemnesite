@@ -1,0 +1,451 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f3edec;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  margin-right: 20px;
+}
+
+.menu li:last-child {
+  margin-right: 0;
+}
+
+.menu a {
+  display: block;
+  padding: 10px;
+  color: #333333;
+  text-decoration: none;
+  transition: color 0.3s;
+  text-align: end;
+}
+
+.menu a:hover {
+  color: #ff0000;
+}
+
+.burger {
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.burger .line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #333333;
+  margin-bottom: 5px;
+  transition: 0.2s linear;
+}
+.burger {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .menu {
+    display: none;
+  }
+  .burger {
+    display: block;
+    background-color: transparent;
+    border: 0;
+  }
+  .burger.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+    transition: 0.2s linear;
+  }
+
+  .burger.active .line:nth-child(2) {
+    opacity: 0;
+    transition: 0.15s linear;
+  }
+
+  .burger.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+    transition: 0.2s linear;
+  }
+
+  nav.active .menu {
+    display: block;
+    background-color: #ffffff;
+    position: absolute;
+    top: 94px;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+  }
+
+  nav.active .menu li {
+    margin: 10px 20px;
+  }
+
+  nav.active .menu a {
+    font-size: 24px;
+  }
+
+  /* MEDIA QUERY TING TIL FORSIDEN/KNAPPERNE/LOGO TIL MOBILSITE */
+  .overskriftlogo {
+    width: 120px;
+    margin-bottom: 20px;
+  }
+
+  .frontknap {
+    font-size: 1em;
+    padding: 12px 0;
+    border-radius: 25px;
+    max-width: 90vw;
+  }
+
+  .forside_1-2-1 {
+    gap: 12px;
+    max-width: 95vw;
+  }
+}
+/* NYT CSS STYLE STYKKE  */
+
+/* TING DER GÅR IGEN PÅ DE FORSKELLIGE SIDER */
+
+.baggrundsbilleder {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  filter: contrast(0.8) saturate(0.5);
+}
+
+h2 {
+  color: #fbf8f4;
+  position: relative;
+  z-index: 1;
+  margin: 24px 24px;
+}
+
+h1 {
+  color: #fbf8f4;
+  text-shadow: 2px 3px 3px #41281a;
+  font-family: Montserrat;
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-align: center;
+}
+
+.h1boks {
+  color: #fbf8f4;
+  text-shadow: none;
+  font-family: "Nunito Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  margin: 10px auto;
+}
+
+.h2boks {
+  margin: 10px auto;
+  text-shadow: none;
+  font-family: "Nunito Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.laesboks {
+  display: inline-block;
+  background: #921212a6; /* rød farve */
+  color: #fff; /* hvid tekst */
+  border: none;
+  border-radius: 20px; /* rundede hjørner */
+  padding: 10px 10px; /* plads indeni */
+  font-size: 0.5em; /* stor tekst */
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  margin: 16px 0 0 0;
+  transition: background 0.2s;
+  font-family: "Nunito Sans";
+}
+
+.laesboks:hover {
+  background: #8c2e2e; /* mørkere rød ved hover */
+}
+
+.pboks {
+  color: #fbf8f4;
+  margin: 10px auto;
+  font-family: "Nunito Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
+}
+
+.overskriftlogo {
+  display: block;
+  width: 220px;
+  align-items: center;
+  margin: 0 auto 30px auto;
+}
+
+header {
+  position: relative;
+  z-index: 1;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.søgefelter {
+  width: 120px;
+  height: 65px;
+  border-radius: 100px;
+  background: #a69b8a; /* light brown fra Figma */
+  color: #222; /* sort tekst */
+  border: none;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding: 12px 10px;
+  margin: auto;
+  white-space: normal;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  transition: background 0.2s;
+  font-family: "Nunito Sans";
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.søgefelter:hover {
+  background: #8c7c6b; /* lidt mørkere ved hover */
+}
+
+.topsite_1 {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.topsite_1-1 {
+  position: relative;
+  z-index: 1;
+}
+
+.topsite_1-2 {
+  position: relative;
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(5, auto); /* 5 knapper i én række */
+  gap: 14px; /* afstand mellem knapperne */
+  justify-items: auto;
+  margin: 40px auto;
+  width: 100%;
+  z-index: 1;
+}
+
+/* FORSIDE */
+.forside_1-2-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 600px;
+  margin: 40px auto 400px auto;
+  align-items: center;
+}
+
+.scroll {
+  color: #ffffff;
+  text-shadow: 1px 1px 0 #41281a;
+  font-family: "Nunito sans";
+}
+
+.forside_1 {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+  overflow: hidden;
+}
+
+.rettelseforside {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.forside_1-2 {
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  height: 100vh;
+}
+
+.forside_2 {
+  position: relative;
+  z-index: 1;
+}
+
+.frontknap {
+  width: 100%;
+  max-width: 600px;
+  font-family: "Nunito Sans";
+  background: rgba(243, 237, 236, 0.45); /* Button background */
+  color: white; /* Text color */
+  text-decoration: none; /* Remove underline */
+  text-align: center;
+  padding: 20px 0;
+  border-radius: 40px;
+  font-size: 1.3em;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07); /* Optional shadow */
+  border: none;
+}
+
+.frontknap:hover {
+  background: #a69586;
+  color: #fff;
+}
+
+.pforside {
+  color: #ffffff;
+  text-shadow: 1px 1px 0 #41281a;
+  font-family: "Libre Franklin";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+/* FUNDING */
+
+.funding_2-1 {
+  background-image: url(imgs/baggrunde/koda.jpeg);
+  filter: contrast(1) saturate(0.8);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+  padding: 32px 24px;
+  margin: 24px 24px;
+  max-width: 700px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.funding_2-1 img {
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+@media screen and (max-width: 800px) {
+  .topsite_1-2 {
+    grid-template-columns: 1fr; /* én kolonne */
+    gap: 12px;
+    width: 60px;
+    margin: 10px;
+  }
+
+  .søgefelter {
+    text-align: center;
+    width: 4;
+    height: 50px;
+    font-size: 1em;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .funding_2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 kolonner */
+    gap: 32px; /* afstand mellem kortene */
+    justify-items: center;
+  }
+}
+
+/* COMMUNITY */
+
+.community_2-1 {
+  position: relative;
+  background: rgba(192, 180, 180, 0.1); /* off-white, semi-transparent */
+  border-radius: 40px;
+  padding: 32px 24px;
+  margin: 24px auto;
+  max-width: 700px;
+  z-index: 1;
+}
+
+.danmarkskort {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  margin: 10px auto;
+}
+
+@media screen and (min-width: 800px) {
+  .community_2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .danmarkskort {
+    grid-column: 2/3;
+    grid-row: 1/4;
+  }
+}
